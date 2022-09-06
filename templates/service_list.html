@@ -1,0 +1,10 @@
+<div>
+    <h1><a href="/">Services</a></h1>
+</div>
+
+{% for service in services %}
+    <div>
+        <h2><a href="">{{ service.name }}</a></h2>
+        <p>{{ service.description|linebreaksbr }}</p>
+    </div>
+{% endfor %}
