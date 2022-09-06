@@ -1,10 +1,27 @@
-<div>
-    <h1><a href="/">Services</a></h1>
-</div>
+{% load static %}
+<html>
+    <head>
+        <title>Django Girls blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/luxxspa.css' %}">
+    </head>
+    <body>
+        <div>
+            <h1 class="page-header"><a href="/">Services</a></h1>
+        </div>
 
-{% for service in services %}
-    <div>
-        <h2><a href="">{{ service.name }}</a></h2>
-        <p>{{ service.description|linebreaksbr }}</p>
-    </div>
-{% endfor %}
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% for service in services %}
+                        <div class="service">
+                            <h2><a href="">{{ service.name }}</a></h2>
+                            <p>{{ service.description|linebreaksbr }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
